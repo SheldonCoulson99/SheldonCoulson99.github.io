@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./water.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <div class="drop"></div>
+        <div class="drop"></div>
+        <div class="drop"></div>
+
+        <div class="collection" @mouseover='mousemove'></div>
+        <span>{{percent}}%</span>
+    </div>
+</body>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            percent: 0,
+        },
+        methods: {
+            mousemove: function () {
+                this.percent++
+                if (this.percent >= 101) {
+                    this.percent = 0
+                }
+            }
+        },
+    })
+</script>
+
+</html>
